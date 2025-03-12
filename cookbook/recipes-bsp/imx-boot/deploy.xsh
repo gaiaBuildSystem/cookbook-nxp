@@ -28,6 +28,12 @@ _DISTRO_MINOR = os.environ.get('DISTRO_MINOR')
 _DISTRO_PATCH = os.environ.get('DISTRO_PATCH')
 _USER_PASSWD = os.environ.get('USER_PASSWD')
 
+# check if we have the DISTRO_VARIANT env
+if 'DISTRO_VARIANT' in os.environ:
+    _DISTRO_VARIANT = f"{os.environ.get('DISTRO_VARIANT')}-"
+else:
+    _DISTRO_VARIANT = ""
+
 # read the meta data
 meta = json.loads(os.environ.get('META', '{}'))
 
@@ -44,6 +50,7 @@ if os.environ["MACHINE"] == "imx95":
     # replace all the {{VAR}} with the actual values
     f = open(f"{_path}/imx95/uuu.mmc.template", "r")
     uuu_mmc = f.read()
+    uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
     uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
     uuu_mmc = uuu_mmc.replace("{{v2}}", _DISTRO_MINOR)
     uuu_mmc = uuu_mmc.replace("{{v3}}", _DISTRO_PATCH)
