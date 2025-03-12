@@ -1,0 +1,11 @@
+{
+    "name": "imx-boot",
+    "type": "bootloader",
+    "priority": 0,
+    "support": [
+        "linux/arm64"
+    ],
+    "deployRecipes": [
+        "deploy.xsh"
+    ]
+}

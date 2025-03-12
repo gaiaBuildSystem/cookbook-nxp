@@ -1,0 +1,28 @@
+{
+    "name": "imx-mkimage",
+    "type": "bootloader",
+    "priority": 0,
+    "support": [
+        "linux/arm64"
+    ],
+    "source": "https://github.com/gaiaBuildSystem/imx-mkimage",
+    "ref": {
+        "linux/arm64": "71b8c18af93a5eb972d80fbec290006066cff24f"
+    },
+    "env": {
+        "SOC_TARGET": "iMX95",
+        "UBOOT_DTB_NAME": ""
+    },
+    "hostDeps": [
+        "binutils",
+        "build-essential",
+        "make",
+        "vim-common"
+    ],
+    "fetchRecipes": [
+        "fetch.xsh"
+    ],
+    "afterDeployRecipes": [
+        "build.sh"
+    ]
+}
