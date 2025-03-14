@@ -23,10 +23,10 @@ This cookbook provides a collection of recipes to help you get started with Deim
 ## Build an Image
 
 ```bash
-./gaia/scripts/bitcook/gaia.ts --buildPath /home/user/workdir --distro ./cookbook-nxp/distro-ref-imx95.json
+./gaia/scripts/bitcook/gaia.ts --buildPath /home/user/workdir --distro ./cookbook-nxp/distro-ref-imx95-verdin-evk.json
 ```
 
-This will build DeimOS for Toradex iMX95 EVK.
+This will build DeimOS for Toradex iMX95 Verdin EVK.
 
 ## Supported Boards -> Machine
 
@@ -34,4 +34,4 @@ This will build DeimOS for Toradex iMX95 EVK.
 
 | Board            | Gaia Machine Name   |
 |------------------|---------------------|
-| Toradex iMX95 EVK| imx95               |
+| Toradex iMX95 EVK| imx95-verdin-evk    |

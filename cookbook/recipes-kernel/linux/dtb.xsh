@@ -39,7 +39,7 @@ _IMAGE_MNT_ROOT = f"{_BUILD_PATH}/tmp/{_MACHINE}/mnt/root"
 os.environ['IMAGE_MNT_BOOT'] = _IMAGE_MNT_BOOT
 os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
-if os.environ["MACHINE"] == "imx95":
+if os.environ["MACHINE"] == "imx95-verdin-evk":
     # copy the device tree blob
     echo @(_USER_PASSWD) | sudo -k -S \
         cp -f \

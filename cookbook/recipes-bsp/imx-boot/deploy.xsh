@@ -45,10 +45,10 @@ _IMAGE_MNT_ROOT = f"{_BUILD_PATH}/tmp/{_MACHINE}/mnt/root"
 os.environ['IMAGE_MNT_BOOT'] = _IMAGE_MNT_BOOT
 os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
-if os.environ["MACHINE"] == "imx95":
+if os.environ["MACHINE"] == "imx95-verdin-evk":
 
     # replace all the {{VAR}} with the actual values
-    f = open(f"{_path}/imx95/uuu.mmc.template", "r")
+    f = open(f"{_path}/imx95-verdin-evk/uuu.mmc.template", "r")
     uuu_mmc = f.read()
     uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
     uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
@@ -66,7 +66,7 @@ if os.environ["MACHINE"] == "imx95":
         cp @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/uuu.mmc @(_BUILD_PATH)/tmp/@(_MACHINE)/deploy/uuu.mmc
 
     # end with copying all for imx-mkimage
-    cp @(_path)/imx95/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/
+    cp @(_path)/imx95-verdin-evk/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/
 
 else:
     Error_Out(
