@@ -13,7 +13,7 @@ if [ "$SOC_TARGET" == "iMX95" ]; then
         dtbs=${UBOOT_DTB_NAME} \
         flash_all
 
-    echo $USER_PASSWD | sudo -k -S \
+    sudo -k \
         cp -f $BUILD_PATH/tmp/$MACHINE/imx-mkimage/iMX95/flash.bin $BUILD_PATH/tmp/$MACHINE/deploy/
 else
     # exception

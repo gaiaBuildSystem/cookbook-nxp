@@ -62,7 +62,7 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
     f.close()
 
     # copy the uuu.mmc to the deploy folder
-    echo @(_USER_PASSWD) | sudo -k -S \
+    sudo -k \
         cp @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/uuu.mmc @(_BUILD_PATH)/tmp/@(_MACHINE)/deploy/uuu.mmc
 
     # end with copying all for imx-mkimage

@@ -41,7 +41,7 @@ os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 if os.environ["MACHINE"] == "imx95-verdin-evk":
     # copy the device tree blob
-    echo @(_USER_PASSWD) | sudo -k -S \
+    sudo -k \
         cp -f \
         @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx95-19x19-verdin-lt8912.dtb \
         @(_IMAGE_MNT_BOOT)/
