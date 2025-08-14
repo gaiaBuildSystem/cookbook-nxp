@@ -8,8 +8,14 @@
     "ref": {
         "linux/arm64": "6c4545203d123c246c5d7995f2893959506d28e0"
     },
+    "patchRecipes": [
+        "env.xsh"
+    ],
     "deployRecipes": [
         "imx-boot.xsh"
+    ],
+    "afterDeployRecipes": [
+        "splash.xsh"
     ],
     "priority": 1,
     "merge": true
