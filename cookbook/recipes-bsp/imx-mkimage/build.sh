@@ -2,6 +2,18 @@
 
 set -e
 
+# match the machine for the soc_target
+if [ "$MACHINE" == "imx95-verdin-evk" ]; then
+    SOC_TARGET="iMX95"
+elif [ "$MACHINE" == "imx8mp-verdin" ]; then
+    SOC_TARGET="iMX8MP"
+else
+    # exception
+    echo "MACHINE is not supported"
+    exit 69
+fi
+
+
 if [ "$SOC_TARGET" == "iMX95" ]; then
     cd $BUILD_PATH/tmp/$MACHINE/imx-mkimage
 
@@ -15,8 +27,12 @@ if [ "$SOC_TARGET" == "iMX95" ]; then
 
     sudo -k \
         cp -f $BUILD_PATH/tmp/$MACHINE/imx-mkimage/iMX95/flash.bin $BUILD_PATH/tmp/$MACHINE/deploy/
-else
-    # exception
-    echo "SOC_TARGET is not supported"
-    exit 69
+
+elif [ "$SOC_TARGET" == "iMX8MP" ]; then
+    cd $BUILD_PATH/tmp/$MACHINE/imx-mkimage
+
+    make \
+        SOC=$SOC_TARGET \
+        mkimage_imx8
+
 fi

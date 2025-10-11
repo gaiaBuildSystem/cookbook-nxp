@@ -68,6 +68,10 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
     # end with copying all for imx-mkimage
     cp @(_path)/imx95-verdin-evk/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/
 
+elif os.environ["MACHINE"] == "imx8mp-verdin":
+
+    cp @(_BUILD_PATH)/imx8mp-verdin/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/
+
 else:
     Error_Out(
         f"Machine [{os.environ['MACHINE']}] is not supported",
