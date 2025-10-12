@@ -52,7 +52,7 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
 
 elif os.environ["MACHINE"] == "imx8mp-verdin":
 
-    cp @(_BUILD_PATH)/imx8mp-verdin/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/
+    cp @(_path)/imx8mp-verdin/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/
     cp @(_path)/imx8mp-verdin/* @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/
 
 else:
