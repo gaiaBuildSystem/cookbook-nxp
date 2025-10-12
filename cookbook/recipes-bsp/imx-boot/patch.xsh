@@ -47,43 +47,13 @@ os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 if os.environ["MACHINE"] == "imx95-verdin-evk":
 
-    # replace all the {{VAR}} with the actual values
-    f = open(f"{_path}/imx95-verdin-evk/uuu.mmc.template", "r")
-    uuu_mmc = f.read()
-    uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
-    uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
-    uuu_mmc = uuu_mmc.replace("{{v2}}", _DISTRO_MINOR)
-    uuu_mmc = uuu_mmc.replace("{{v3}}", _DISTRO_PATCH)
-    f.close()
-
-    # write the new uuu.mmc
-    f = open(f"{_BUILD_PATH}/tmp/{_MACHINE}/imx-mkimage/iMX95/uuu.mmc", "w")
-    f.write(uuu_mmc)
-    f.close()
-
-    # copy the uuu.mmc to the deploy folder
-    sudo -k \
-        cp @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/uuu.mmc @(_BUILD_PATH)/tmp/@(_MACHINE)/deploy/uuu.mmc
+    # end with copying all for imx-mkimage
+    cp @(_path)/imx95-verdin-evk/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/
 
 elif os.environ["MACHINE"] == "imx8mp-verdin":
 
-    # replace all the {{VAR}} with the actual values
-    f = open(f"{_path}/imx95-verdin-evk/uuu.mmc.template", "r")
-    uuu_mmc = f.read()
-    uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
-    uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
-    uuu_mmc = uuu_mmc.replace("{{v2}}", _DISTRO_MINOR)
-    uuu_mmc = uuu_mmc.replace("{{v3}}", _DISTRO_PATCH)
-    f.close()
-
-    # write the new uuu.mmc
-    f = open(f"{_BUILD_PATH}/tmp/{_MACHINE}/imx-mkimage/iMX95/uuu.mmc", "w")
-    f.write(uuu_mmc)
-    f.close()
-
-    # copy the uuu.mmc to the deploy folder
-    sudo -k \
-        cp @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/uuu.mmc @(_BUILD_PATH)/tmp/@(_MACHINE)/deploy/uuu.mmc
+    cp @(_BUILD_PATH)/imx8mp-verdin/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/
+    cp @(_path)/imx8mp-verdin/* @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/
 
 else:
     Error_Out(
