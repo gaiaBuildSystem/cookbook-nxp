@@ -16,7 +16,7 @@ from torizon_templates_utils.colors import print,BgColor,Color
 from torizon_templates_utils.errors import Error_Out,Error
 
 
-print("Deploying imx u-boot artifacts ...", color=Color.WHITE, bg_color=BgColor.GREEN)
+print("Deploying imx linux artifacts ...", color=Color.WHITE, bg_color=BgColor.GREEN)
 
 # get the common variables
 _ARCH = os.environ.get('ARCH')
@@ -46,10 +46,17 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
         @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx95-19x19-verdin-lt8912.dtb \
         @(_IMAGE_MNT_BOOT)/
 
+elif os.environ["MACHINE"] == "imx8mp-verdin":
+    # copy the device tree blob
+    sudo -k \
+        cp -f \
+        @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx8mp-verdin-wifi-dev.dtb \
+        @(_IMAGE_MNT_BOOT)/
+
 else:
     Error_Out(
         f"Machine [{os.environ['MACHINE']}] is not supported",
         Error.EINVAL
     )
 
-print("Deploying imx u-boot artifacts, OK", color=Color.WHITE, bg_color=BgColor.GREEN)
+print("Deploying imx linux artifacts, OK", color=Color.WHITE, bg_color=BgColor.GREEN)
