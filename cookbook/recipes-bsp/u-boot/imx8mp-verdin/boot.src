@@ -40,11 +40,11 @@ env set bootargs ${bootargs} ${extraargs}
 saveenv
 
 # loads the kernel and the initramfs
-mmc dev 0
-fatload mmc 0:1 ${kernel_addr_r} ${kernel_image}
-fatload mmc 0:1 ${initrd_addr} initramfs.cpio.gz
+mmc dev 2
+fatload mmc 2:1 ${kernel_addr_r} Image
+fatload mmc 2:1 ${initrd_addr} initramfs.cpio.gz
 env set ramdisk_size ${filesize}
-fatload mmc 0:1 ${fdt_addr} ${fdtfile}
+fatload mmc 2:1 ${fdt_addr_r} ${fdtfile}
 
 # the device tree was already loaded by the rpi firmware
-booti ${kernel_addr_r} ${initrd_addr}:${ramdisk_size} ${fdt_addr}
+booti ${kernel_addr_r} ${initrd_addr}:${ramdisk_size} ${fdt_addr_r}
