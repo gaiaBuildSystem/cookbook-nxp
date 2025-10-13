@@ -35,4 +35,8 @@ elif [ "$SOC_TARGET" == "iMX8MP" ]; then
         SOC=$SOC_TARGET \
         mkimage_imx8
 
+    # the u-boot seems to generate the flash.bin for us
+    sudo -k \
+        cp -f $BUILD_PATH/tmp/$MACHINE/u-boot/flash.bin $BUILD_PATH/tmp/$MACHINE/deploy/
+
 fi
