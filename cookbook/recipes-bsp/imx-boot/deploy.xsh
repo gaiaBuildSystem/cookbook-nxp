@@ -77,13 +77,13 @@ elif os.environ["MACHINE"] == "imx8mp-verdin":
     f.close()
 
     # write the new uuu.mmc
-    f = open(f"{_BUILD_PATH}/tmp/{_MACHINE}/imx-mkimage/iMX8MP/uuu.mmc", "w")
+    f = open(f"{_BUILD_PATH}/tmp/{_MACHINE}/imx-mkimage/iMX8M/uuu.mmc", "w")
     f.write(uuu_mmc)
     f.close()
 
     # copy the uuu.mmc to the deploy folder
     sudo -k \
-        cp @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8MP/uuu.mmc @(_BUILD_PATH)/tmp/@(_MACHINE)/deploy/uuu.mmc
+        cp @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/uuu.mmc @(_BUILD_PATH)/tmp/@(_MACHINE)/deploy/uuu.mmc
 
 else:
     Error_Out(
