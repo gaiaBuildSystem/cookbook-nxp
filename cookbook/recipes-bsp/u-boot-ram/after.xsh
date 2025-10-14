@@ -40,7 +40,7 @@ os.environ['IMAGE_MNT_BOOT'] = _IMAGE_MNT_BOOT
 os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 if os.environ["MACHINE"] == "imx8mp-verdin":
-    sudo -k cp -f @(_BUILD_PATH)/u-boot-ram/flash.bin @(_BUILD_PATH)/deploy/flash-ram.bin
+    sudo -k cp -f @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot-ram/flash.bin @(_BUILD_PATH)/tmp/@(_MACHINE)/deploy/flash-ram.bin
 else:
     Error_Out(
         f"Machine [{os.environ['MACHINE']}] is not supported",
