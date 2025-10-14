@@ -16,6 +16,7 @@ FB: ucmd setenv fastboot_partition_alias_bootloader 2.1:0
 FB: ucmd mmc dev ${emmc_dev}
 FB: flash -raw2sparse all imx8mp-verdin-{{variant}}{{v1}}-{{v2}}-{{v3}}.img
 FB: flash bootloader flash.bin
+FB: ucmd setenv emmc_ack 1
 FB: ucmd if env exists emmc_ack; then ; else setenv emmc_ack 0; fi;
 FB: ucmd mmc partconf ${emmc_dev} ${emmc_ack} 1 0
 FB: done
