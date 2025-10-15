@@ -50,7 +50,7 @@ elif os.environ["MACHINE"] == "imx8mp-verdin":
     # copy the device tree blob
     sudo -k \
         cp -f \
-        @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx8mp-verdin-wifi-dev.dtb \
+        @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx8mp-verdin-wifi-ivy.dtb \
         @(_IMAGE_MNT_BOOT)/
 
 else:

@@ -26,7 +26,7 @@ if env exists fdtfile
     then
         echo "fdtfile is set to ${fdtfile}"
     else
-        setenv fdtfile imx8mp-verdin-wifi-dev.dtb
+        setenv fdtfile imx8mp-verdin-wifi-ivy.dtb
 fi
 
 
