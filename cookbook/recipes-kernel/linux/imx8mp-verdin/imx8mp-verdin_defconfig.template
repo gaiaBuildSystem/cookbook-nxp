@@ -1850,7 +1850,7 @@ CONFIG_EFI_EARLYCON=y
 # CONFIG_EFI_COCO_SECRET is not set
 # end of EFI (Extensible Firmware Interface) Support
 
-CONFIG_IMX_DSP=m
+CONFIG_IMX_DSP=y
 CONFIG_IMX_SCU=y
 CONFIG_IMX_SCU_PD=y
 # CONFIG_IMX_ISPMU is not set
