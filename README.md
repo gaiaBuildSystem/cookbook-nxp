@@ -9,6 +9,15 @@
 
 This cookbook provides a collection of recipes to help you get started with DeimOS for NXP iMX Platform based boards.
 
+## Supported Boards -> Machine
+
+> ⚠️ As this grows we could change the machine name to a more generic name.
+
+| Board                       | Gaia Machine Name   |
+|-----------------------------|---------------------|
+| Toradex iMX95 EVK           | imx95-verdin-evk    |
+| Toradex Verdin iMX8M Plus   | imx8mp-verdin       |
+
 ## Prerequisites
 
 - [Gaia project Gaia Core](https://github.com/gaiaBuildSystem/gaia);
@@ -27,12 +36,3 @@ This cookbook provides a collection of recipes to help you get started with Deim
 ```
 
 This will build DeimOS for Toradex iMX95 Verdin EVK.
-
-## Supported Boards -> Machine
-
-> ⚠️ As this grows we could change the machine name to a more generic name.
-
-| Board                       | Gaia Machine Name   |
-|-----------------------------|---------------------|
-| Toradex iMX95 EVK           | imx95-verdin-evk    |
-| Toradex Verdin iMX8M Plus   | imx8mp-verdin       |
