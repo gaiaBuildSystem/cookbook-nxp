@@ -32,6 +32,7 @@ This will build DeimOS for Toradex iMX95 Verdin EVK.
 
 > ⚠️ As this grows we could change the machine name to a more generic name.
 
-| Board            | Gaia Machine Name   |
-|------------------|---------------------|
-| Toradex iMX95 EVK| imx95-verdin-evk    |
+| Board                       | Gaia Machine Name   |
+|-----------------------------|---------------------|
+| Toradex iMX95 EVK           | imx95-verdin-evk    |
+| Toradex Verdin iMX8M Plus   | imx8mp-verdin       |
