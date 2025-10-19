@@ -59,6 +59,10 @@ sudo chroot @(_IMAGE_MNT_ROOT) \
 sudo cp @(_path)/files/toradex.sources \
     @(_IMAGE_MNT_ROOT)/etc/apt/sources.list.d/toradex.sources
 
+# add the origin pin
+sudo cp @(_path)/files/toradex-feeds \
+    @(_IMAGE_MNT_ROOT)/etc/apt/preferences.d/toradex-feeds
+
 
 print(
     "Deploying imx8 debian feed, ok",
