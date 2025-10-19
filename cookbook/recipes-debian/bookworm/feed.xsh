@@ -54,7 +54,6 @@ sudo chroot @(_IMAGE_MNT_ROOT) \
 sudo chroot @(_IMAGE_MNT_ROOT) \
     bash -c 'curl -fsSL https://feeds.toradex.com/stable/imx8/toradex-debian-repo-07102024.asc | gpg --dearmor > /usr/share/keyrings/toradex-debian-repo.gpg'
 
-
 # add the toradex feed
 sudo cp @(_path)/files/toradex.sources \
     @(_IMAGE_MNT_ROOT)/etc/apt/sources.list.d/toradex.sources
@@ -62,6 +61,10 @@ sudo cp @(_path)/files/toradex.sources \
 # add the origin pin
 sudo cp @(_path)/files/toradex-feeds \
     @(_IMAGE_MNT_ROOT)/etc/apt/preferences.d/toradex-feeds
+
+# add the buildconfig
+sudo cp @(_path)/files/01_buildconfig \
+    @(_IMAGE_MNT_ROOT)/etc/apt/apt.conf.d/01_buildconfig
 
 
 print(
