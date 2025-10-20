@@ -45,6 +45,9 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
 elif os.environ["MACHINE"] == "imx8mp-verdin":
     cp @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/u-boot.bin @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/u-boot.bin
     cp @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/spl/u-boot-spl.bin @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/u-boot-spl.bin
+elif os.environ["MACHINE"] == "imx93-frdm":
+    cp @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/u-boot.bin @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX93/u-boot.bin
+    cp @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/spl/u-boot-spl.bin @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX93/u-boot-spl.bin
 else:
     Error_Out(
         f"Machine [{os.environ['MACHINE']}] is not supported",

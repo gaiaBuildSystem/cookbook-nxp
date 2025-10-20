@@ -53,6 +53,13 @@ elif os.environ["MACHINE"] == "imx8mp-verdin":
         @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx8mp-verdin-wifi-yavia.dtb \
         @(_IMAGE_MNT_BOOT)/
 
+elif os.environ["MACHINE"] == "imx93-frdm":
+    # copy the device tree blob
+    sudo -k \
+        cp -f \
+        @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx93-11x11-frdm.dtb \
+        @(_IMAGE_MNT_BOOT)/
+
 else:
     Error_Out(
         f"Machine [{os.environ['MACHINE']}] is not supported",
