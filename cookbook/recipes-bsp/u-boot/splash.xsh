@@ -39,7 +39,9 @@ _IMAGE_MNT_ROOT = f"{_BUILD_PATH}/tmp/{_MACHINE}/mnt/root"
 os.environ['IMAGE_MNT_BOOT'] = _IMAGE_MNT_BOOT
 os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
-if os.environ["MACHINE"] == "imx95-verdin-evk" or os.environ["MACHINE"] == "imx8mp-verdin":
+if os.environ["MACHINE"] == "imx95-verdin-evk" or \
+    os.environ["MACHINE"] == "imx8mp-verdin" or \
+    os.environ["MACHINE"] == "imx93-frdm":
     sudo -k cp -f @(_path)/splash.bmp @(_IMAGE_MNT_BOOT)/splash.bmp
 else:
     Error_Out(
