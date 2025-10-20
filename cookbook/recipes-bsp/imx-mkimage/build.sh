@@ -42,6 +42,13 @@ elif [ "$SOC_TARGET" == "iMX8MP" ]; then
         cp -f $BUILD_PATH/tmp/$MACHINE/u-boot/flash.bin $BUILD_PATH/tmp/$MACHINE/deploy/
 
 elif [ "$SOC_TARGET" == "iMX93" ]; then
-    echo "Skipping for iMX93"
+    cd $BUILD_PATH/tmp/$MACHINE/imx-mkimage
+
+    make \
+        SOC=$SOC_TARGET \
+        flash_singleboot
+
+    sudo -k \
+        cp -f $BUILD_PATH/tmp/$MACHINE/imx-mkimage/iMX93/flash.bin $BUILD_PATH/tmp/$MACHINE/deploy/
 
 fi
