@@ -50,8 +50,8 @@ $BUILD_ROOT = _BUILD_ROOT
 sudo chroot @(_IMAGE_MNT_ROOT) \
     bash -c 'apt-get update && apt-get install -y curl gnupg'
 
-
-if _MACHINE == "imx8mp-verdin":
+# TODO: we have a bug on the Toradex feed that needs to be fixed first
+if _MACHINE == "imx8mp-verdin-none":
     # get the key
     sudo chroot @(_IMAGE_MNT_ROOT) \
         bash -c 'curl -fsSL https://feeds.toradex.com/stable/imx8/toradex-debian-repo-07102024.asc | gpg --dearmor > /usr/share/keyrings/toradex-debian-repo.gpg'
