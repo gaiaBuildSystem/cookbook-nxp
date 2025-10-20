@@ -7,6 +7,8 @@ if [ "$MACHINE" == "imx95-verdin-evk" ]; then
     SOC_TARGET="iMX95"
 elif [ "$MACHINE" == "imx8mp-verdin" ]; then
     SOC_TARGET="iMX8MP"
+elif [ "$MACHINE" == "imx93-frdm" ]; then
+    SOC_TARGET="iMX93"
 else
     # exception
     echo "MACHINE is not supported"
@@ -38,5 +40,8 @@ elif [ "$SOC_TARGET" == "iMX8MP" ]; then
     # the u-boot seems to generate the flash.bin for us
     sudo -k \
         cp -f $BUILD_PATH/tmp/$MACHINE/u-boot/flash.bin $BUILD_PATH/tmp/$MACHINE/deploy/
+
+elif [ "$SOC_TARGET" == "iMX93" ]; then
+    echo "Skipping for iMX93"
 
 fi
