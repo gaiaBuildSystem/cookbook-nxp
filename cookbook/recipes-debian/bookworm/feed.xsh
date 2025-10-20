@@ -50,21 +50,30 @@ $BUILD_ROOT = _BUILD_ROOT
 sudo chroot @(_IMAGE_MNT_ROOT) \
     bash -c 'apt-get update && apt-get install -y curl gnupg'
 
-# get the key
-sudo chroot @(_IMAGE_MNT_ROOT) \
-    bash -c 'curl -fsSL https://feeds.toradex.com/stable/imx8/toradex-debian-repo-07102024.asc | gpg --dearmor > /usr/share/keyrings/toradex-debian-repo.gpg'
 
-# add the toradex feed
-sudo cp @(_path)/files/toradex.sources \
-    @(_IMAGE_MNT_ROOT)/etc/apt/sources.list.d/toradex.sources
+if _MACHINE == "imx8mp-verdin":
+    # get the key
+    sudo chroot @(_IMAGE_MNT_ROOT) \
+        bash -c 'curl -fsSL https://feeds.toradex.com/stable/imx8/toradex-debian-repo-07102024.asc | gpg --dearmor > /usr/share/keyrings/toradex-debian-repo.gpg'
 
-# add the origin pin
-sudo cp @(_path)/files/toradex-feeds \
-    @(_IMAGE_MNT_ROOT)/etc/apt/preferences.d/toradex-feeds
+    # add the toradex feed
+    sudo cp @(_path)/files/toradex.sources \
+        @(_IMAGE_MNT_ROOT)/etc/apt/sources.list.d/toradex.sources
 
-# add the buildconfig
-sudo cp @(_path)/files/01_buildconfig \
-    @(_IMAGE_MNT_ROOT)/etc/apt/apt.conf.d/01_buildconfig
+    # add the origin pin
+    sudo cp @(_path)/files/toradex-feeds \
+        @(_IMAGE_MNT_ROOT)/etc/apt/preferences.d/toradex-feeds
+
+    # TODO: this is not needed? maybe only for containers
+    # # add the buildconfig
+    # sudo cp @(_path)/files/01_buildconfig \
+    #     @(_IMAGE_MNT_ROOT)/etc/apt/apt.conf.d/01_buildconfig
+
+else:
+    print(
+        f"Skipping feed installation for machine '{_MACHINE}'",
+        color=Color.YELLOW
+    )
 
 
 print(
