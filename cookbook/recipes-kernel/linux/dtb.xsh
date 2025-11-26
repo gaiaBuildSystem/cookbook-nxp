@@ -46,6 +46,13 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
         @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx95-19x19-verdin-lt8912.dtb \
         @(_IMAGE_MNT_BOOT)/
 
+elif os.environ["MACHINE"] == "smarc-imx95":
+    # copy the device tree blob
+    sudo -k \
+        cp -f \
+        @(_BUILD_PATH)/tmp/@(_MACHINE)/linux/arch/arm64/boot/dts/freescale/imx95-toradex-smarc-dev.dtb \
+        @(_IMAGE_MNT_BOOT)/
+
 elif os.environ["MACHINE"] == "imx8mp-verdin":
     # copy the device tree blob
     sudo -k \

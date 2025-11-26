@@ -5,6 +5,8 @@ set -e
 # match the machine for the soc_target
 if [ "$MACHINE" == "imx95-verdin-evk" ]; then
     SOC_TARGET="iMX95"
+elif [ "$MACHINE" == "smarc-imx95" ]; then
+    SOC_TARGET="iMX95"
 elif [ "$MACHINE" == "imx8mp-verdin" ]; then
     SOC_TARGET="iMX8MP"
 elif [ "$MACHINE" == "imx93-frdm" ]; then

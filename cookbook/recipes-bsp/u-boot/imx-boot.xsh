@@ -39,7 +39,7 @@ _IMAGE_MNT_ROOT = f"{_BUILD_PATH}/tmp/{_MACHINE}/mnt/root"
 os.environ['IMAGE_MNT_BOOT'] = _IMAGE_MNT_BOOT
 os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
-if os.environ["MACHINE"] == "imx95-verdin-evk":
+if os.environ["MACHINE"] in ("imx95-verdin-evk", "smarc-imx95"):
     cp @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/u-boot.bin @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/u-boot.bin
     cp @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/spl/u-boot-spl.bin @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/u-boot-spl.bin
 elif os.environ["MACHINE"] == "imx8mp-verdin":

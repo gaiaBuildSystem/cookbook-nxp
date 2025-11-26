@@ -50,6 +50,11 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
     # end with copying all for imx-mkimage
     cp @(_path)/imx95-verdin-evk/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/
 
+elif os.environ["MACHINE"] == "smarc-imx95":
+
+    # end with copying all for imx-mkimage
+    cp @(_path)/smarc-imx95/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX95/
+
 elif os.environ["MACHINE"] == "imx8mp-verdin":
 
     cp @(_path)/imx8mp-verdin/* @(_BUILD_PATH)/tmp/@(_MACHINE)/imx-mkimage/iMX8M/

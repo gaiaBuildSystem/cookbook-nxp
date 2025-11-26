@@ -41,7 +41,8 @@ os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 if os.environ["MACHINE"] == "imx95-verdin-evk" or \
     os.environ["MACHINE"] == "imx8mp-verdin" or \
-    os.environ["MACHINE"] == "imx93-frdm":
+    os.environ["MACHINE"] == "imx93-frdm" or \
+    os.environ["MACHINE"] == "smarc-imx95":
     sudo -k cp -f @(_path)/splash.bmp @(_IMAGE_MNT_BOOT)/splash.bmp
 else:
     Error_Out(

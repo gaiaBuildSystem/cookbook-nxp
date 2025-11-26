@@ -16,7 +16,7 @@ from torizon_templates_utils.colors import print,BgColor,Color
 from torizon_templates_utils.errors import Error_Out,Error
 
 
-print("patching imx95_evk env ...", color=Color.WHITE, bg_color=BgColor.GREEN)
+print("patching imx env ...", color=Color.WHITE, bg_color=BgColor.GREEN)
 
 # get the common variables
 _ARCH = os.environ.get('ARCH')
@@ -41,7 +41,7 @@ os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 if os.environ["MACHINE"] == "imx95-verdin-evk":
     sudo -k cp -f @(_path)/@(_MACHINE)/verdin-imx95.env @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/board/freescale/imx95_evk/verdin-imx95.env
-elif os.environ["MACHINE"] == "imx8mp-verdin" or os.environ["MACHINE"] == "imx93-frdm":
+elif os.environ["MACHINE"] in ("imx8mp-verdin", "imx93-frdm", "smarc-imx95"):
     print(
         f"Machine [{os.environ['MACHINE']}] does not require env patching, skipping",
         color=Color.WHITE,
@@ -53,4 +53,4 @@ else:
         Error.EINVAL
     )
 
-print("patching imx95_evk env, OK", color=Color.WHITE, bg_color=BgColor.GREEN)
+print("patching imx env, OK", color=Color.WHITE, bg_color=BgColor.GREEN)
