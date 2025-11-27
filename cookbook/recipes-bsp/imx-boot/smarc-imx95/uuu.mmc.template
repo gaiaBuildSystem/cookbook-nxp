@@ -7,6 +7,8 @@ SDP: boot -f flash.bin
 # i.MX8QXP, i.MX8QM
 SDPS: boot -f flash.bin
 
+CFG: SDPV: -chip SPL1 -vid 0x1b67 -pid 0x4fff
+
 # These commands will be run when use SPL and will be skipped if no spl
 # SDPU will be deprecated. please use SDPV instead of SDPU
 # {
@@ -22,6 +24,8 @@ SDPV: delay 1000
 SDPV: write -f flash.bin -skipspl
 SDPV: jump
 # }
+
+CFG: FB: -vid 0x1b67 -pid 0x4000
 
 FB: ucmd setenv fastboot_dev mmc
 FB: ucmd setenv mmcdev ${emmc_dev}
