@@ -1,0 +1,24 @@
+{
+    "name": "imx-mkimage",
+    "type": "bootloader",
+    "priority": 0,
+    "support": [
+        "linux/arm64"
+    ],
+    "source": "https://github.com/gaiaBuildSystem/imx-mkimage",
+    "ref": {
+        "linux/arm64": "81fca6434be0610f3f9216a762aadc4dc3e8d8db"
+    },
+    "hostDeps": [
+        "binutils",
+        "build-essential",
+        "make",
+        "vim-common"
+    ],
+    "fetchRecipes": [
+        "fetch.xsh"
+    ],
+    "afterDeployRecipes": [
+        "build.sh"
+    ]
+}
