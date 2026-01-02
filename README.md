@@ -2,8 +2,8 @@
 
 <p align="center">
     <img
-        src="https://www.nxp.com/assets/images/en/logos-internal/NXP_logo_RGB_web.jpg"
-        alt="Rpi Logo"
+        src=".assets/image.png"
+        alt="Gaia NXP"
         width="300" />
 </p>
 
