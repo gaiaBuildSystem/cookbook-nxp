@@ -6,7 +6,7 @@
     ],
     "source": "https://github.com/gaiaBuildSystem/u-boot",
     "ref": {
-        "linux/arm64": "70c0b9d8c6a2b6ef9ce3d5999de043f485cadc97"
+        "linux/arm64": "cfc9b171be537e58c76788112adc40968a42d4bb"
     },
     "patchRecipes": [
         "env.xsh"
