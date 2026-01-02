@@ -15,6 +15,7 @@ This cookbook provides a collection of recipes to help you get started with Deim
 
 | Board                       | Gaia Machine Name   |
 |-----------------------------|---------------------|
+| Toradex SMARC iMX95         | smarc-imx95         |
 | Toradex iMX95 EVK           | imx95-verdin-evk    |
 | NXP iMX93 Freedom Board     | imx93-frdm          |
 | Toradex Verdin iMX8M Plus   | imx8mp-verdin       |
