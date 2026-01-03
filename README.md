@@ -2,9 +2,9 @@
 
 <p align="center">
     <img
-        src=".assets/image.png"
+        src=".assets/cover.png"
         alt="Gaia NXP"
-        width="300" />
+        width="400" />
 </p>
 
 This cookbook provides a collection of recipes to help you get started with DeimOS for NXP iMX Platform based boards.
@@ -23,13 +23,6 @@ This cookbook provides a collection of recipes to help you get started with Deim
 ## Prerequisites
 
 - [Gaia project Gaia Core](https://github.com/gaiaBuildSystem/gaia);
-
-<p align="center">
-    <img
-        src="https://github.com/gaiaBuildSystem/.github/raw/main/profile/GaiaBuildSystemLogoDebCircle.png"
-        alt="This is a Gaia Project based cookbook"
-        width="170" />
-</p>
 
 ## Build an Image
 
