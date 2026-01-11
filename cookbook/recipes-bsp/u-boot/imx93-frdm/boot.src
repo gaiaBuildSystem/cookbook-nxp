@@ -39,12 +39,20 @@ env set bootargs ${bootargs} ${extraargs}
 
 saveenv
 
+# at the flash from uuu we have set the boot type
+if env exists boot_origin
+    then
+        echo "boot_origin is set to ${boot_origin}"
+    else
+        setenv boot_origin 1
+fi
+
 # loads the kernel and the initramfs
-mmc dev 0
-fatload mmc 0:1 ${kernel_addr_r} ${kernel_image}
-fatload mmc 0:1 ${initrd_addr} initramfs.cpio.gz
+mmc dev ${boot_origin}
+fatload mmc ${boot_origin}:1 ${kernel_addr_r} ${kernel_image}
+fatload mmc ${boot_origin}:1 ${initrd_addr} initramfs.cpio.gz
 env set ramdisk_size ${filesize}
-fatload mmc 0:1 ${fdt_addr} ${fdtfile}
+fatload mmc ${boot_origin}:1 ${fdt_addr} ${fdtfile}
 
 # the device tree was already loaded by the rpi firmware
 booti ${kernel_addr_r} ${initrd_addr}:${ramdisk_size} ${fdt_addr}

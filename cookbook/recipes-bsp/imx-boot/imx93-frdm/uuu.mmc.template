@@ -30,4 +30,7 @@ FB: flash -raw2sparse all imx93-frdm-{{variant}}{{v1}}-{{v2}}-{{v3}}.img
 FB: flash bootloader flash.bin
 FB: ucmd if env exists emmc_ack; then ; else setenv emmc_ack 0; fi;
 FB: ucmd mmc partconf ${emmc_dev} ${emmc_ack} 1 0
+FB: ucmd setenv boot_origin 0
+FB: ucmd setenv boot_targets mmc0
+FB: ucmd saveenv
 FB: done
