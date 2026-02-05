@@ -1,0 +1,25 @@
+{
+    "name": "custom-feed",
+    "type": "config",
+    "priority": 1,
+    "support": [
+        "linux/amd64",
+        "linux/arm64"
+    ],
+    "customData": {
+        "smarc-imx95": {
+            "feeds": [
+                {
+                    "name": "toradex",
+                    "feedUrl": "feeds.toradex.com",
+                    "feedUri": "https://feeds.toradex.com/stable/imx95/snapshots/20251217T202103Z",
+                    "suites": "stable",
+                    "components": "main non-free",
+                    "gpgKeyUrl": "https://feeds.toradex.com/stable/imx95/toradex-debian-repo-07102024.asc",
+                    "pinPriority": 900
+                }
+            ]
+        }
+    },
+    "merge": true
+}
