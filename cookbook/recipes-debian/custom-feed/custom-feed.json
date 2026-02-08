@@ -11,11 +11,11 @@
             "feeds": [
                 {
                     "name": "toradex",
-                    "feedUrl": "feeds.toradex.com",
                     "feedUri": "https://feeds.toradex.com/stable/imx95/snapshots/20251217T202103Z",
                     "suites": "stable",
                     "components": "main non-free",
                     "gpgKeyUrl": "https://feeds.toradex.com/stable/imx95/toradex-debian-repo-07102024.asc",
+                    "pin": "origin feeds.toradex.com",
                     "pinPriority": 900
                 }
             ]
