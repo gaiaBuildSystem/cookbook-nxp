@@ -30,6 +30,15 @@ if [ "$SOC_TARGET" == "iMX95" ]; then
             dtbs=${UBOOT_DTB_NAME} \
             flash_all
 
+    elif [ "$MACHINE" == "imx95-verdin-a0" ]; then
+        make \
+            SOC=$SOC_TARGET \
+            OEI=YES \
+            LPDDR_TYPE=lpddr4x \
+            LPDDR_FW_VERSION="_v202409" \
+            dtbs=${UBOOT_DTB_NAME} \
+            flash_all
+
     elif [ "$MACHINE" == "smarc-imx95" ]; then
         make \
             SOC=$SOC_TARGET \

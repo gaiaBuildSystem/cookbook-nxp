@@ -40,6 +40,8 @@ os.environ['IMAGE_MNT_BOOT'] = _IMAGE_MNT_BOOT
 os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 if os.environ["MACHINE"] == "imx95-verdin-evk" or \
+    os.environ["MACHINE"] == "imx95-verdin-a0" or \
+    os.environ["MACHINE"] == "imx8mp-verdin-evk" or \
     os.environ["MACHINE"] == "imx8mp-verdin" or \
     os.environ["MACHINE"] == "imx93-frdm" or \
     os.environ["MACHINE"] == "smarc-imx95":
