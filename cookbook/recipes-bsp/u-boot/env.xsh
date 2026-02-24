@@ -41,7 +41,7 @@ os.environ['IMAGE_MNT_ROOT'] = _IMAGE_MNT_ROOT
 
 if os.environ["MACHINE"] == "imx95-verdin-evk":
     sudo -k cp -f @(_path)/@(_MACHINE)/verdin-imx95.env @(_BUILD_PATH)/tmp/@(_MACHINE)/u-boot/board/freescale/imx95_evk/verdin-imx95.env
-elif os.environ["MACHINE"] in ("imx8mp-verdin", "imx93-frdm", "smarc-imx95", "verdin-imx95-a0"):
+elif os.environ["MACHINE"] in ("imx8mp-verdin", "imx93-frdm", "smarc-imx95", "imx95-verdin-a0"):
     print(
         f"Machine [{os.environ['MACHINE']}] does not require env patching, skipping",
         color=Color.WHITE,
