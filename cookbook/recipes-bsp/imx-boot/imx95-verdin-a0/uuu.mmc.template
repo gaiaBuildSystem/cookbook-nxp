@@ -7,6 +7,8 @@ SDP: boot -f flash.bin
 # i.MX8QXP, i.MX8QM
 SDPS: boot -f flash.bin
 
+CFG: SDPV: -chip SPL1 -vid 0x1b67 -pid 0x4fff
+
 # These commands will be run when use SPL and will be skipped if no spl
 # SDPU will be deprecated. please use SDPV instead of SDPU
 # {
@@ -23,11 +25,18 @@ SDPV: write -f flash.bin -skipspl
 SDPV: jump
 # }
 
+CFG: FB: -vid 0x1b67 -pid 0x4000
+
+FB: ucmd env default -a
+FB: ucmd saveenv
 FB: ucmd setenv fastboot_dev mmc
+FB: ucmd setenv fastboot_partition_alias_all 0.0:0
+FB: ucmd setenv fastboot_partition_alias_bootloader 0.1:0
 FB: ucmd setenv mmcdev ${emmc_dev}
 FB: ucmd mmc dev ${emmc_dev}
 FB: flash -raw2sparse all imx95-verdin-a0-{{variant}}{{v1}}-{{v2}}-{{v3}}.img
 FB: flash bootloader flash.bin
+FB: ucmd setenv emmc_ack 1
 FB: ucmd if env exists emmc_ack; then ; else setenv emmc_ack 0; fi;
 FB: ucmd mmc partconf ${emmc_dev} ${emmc_ack} 1 0
 FB: done

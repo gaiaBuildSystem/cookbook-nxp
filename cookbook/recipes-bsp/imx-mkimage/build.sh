@@ -39,7 +39,7 @@ if [ "$SOC_TARGET" == "iMX95" ]; then
             LPDDR_TYPE=lpddr4x \
             LPDDR_FW_VERSION="_v202409" \
             dtbs=${UBOOT_DTB_NAME} \
-            flash_all
+            flash_a55
 
     elif [ "$MACHINE" == "smarc-imx95" ]; then
         make \
