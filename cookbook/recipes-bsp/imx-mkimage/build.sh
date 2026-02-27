@@ -33,6 +33,7 @@ if [ "$SOC_TARGET" == "iMX95" ]; then
             flash_all
 
     elif [ "$MACHINE" == "imx95-verdin-a0" ]; then
+        make clean
         make \
             SOC=$SOC_TARGET \
             OEI=YES \
