@@ -38,6 +38,7 @@ if [ "$SOC_TARGET" == "iMX95" ]; then
             OEI=YES \
             LPDDR_TYPE=lpddr4x \
             LPDDR_FW_VERSION="_v202409" \
+            REV=A0 \
             dtbs=${UBOOT_DTB_NAME} \
             flash_a55
 
