@@ -25,18 +25,14 @@ SDPV: write -f flash.bin -skipspl
 SDPV: jump
 # }
 
-CFG: FB: -vid 0x1b67 -pid 0x4000
+CFG: FB: -vid 0x1b67 -pid 0x4059
 
 FB: ucmd env default -a
-FB: ucmd saveenv
-FB: ucmd setenv fastboot_dev mmc
-FB: ucmd setenv fastboot_partition_alias_all 0.0:0
-FB: ucmd setenv fastboot_partition_alias_bootloader 0.1:0
-FB: ucmd setenv mmcdev ${emmc_dev}
-FB: ucmd mmc dev ${emmc_dev}
 FB: flash -raw2sparse all imx95-verdin-a0-{{variant}}{{v1}}-{{v2}}-{{v3}}.img
-FB: flash bootloader flash.bin
-FB: ucmd setenv emmc_ack 1
-FB: ucmd if env exists emmc_ack; then ; else setenv emmc_ack 0; fi;
-FB: ucmd mmc partconf ${emmc_dev} ${emmc_ack} 1 0
+FB: download -f flash.bin
+FB: ucmd setenv emmc_dev 0
+FB: ucmd mmc dev ${emmc_dev} 1
+FB: ucmd mmc write ${loadaddr} 0x0 0x1344
+FB: ucmd mmc dev ${emmc_dev} 0
+FB: ucmd mmc partconf ${emmc_dev} 1 1 0
 FB: done
