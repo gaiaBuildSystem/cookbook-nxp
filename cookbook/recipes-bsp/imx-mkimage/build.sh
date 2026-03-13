@@ -5,8 +5,6 @@ set -e
 # match the machine for the soc_target
 if [ "$MACHINE" == "imx95-verdin-evk" ]; then
     SOC_TARGET="iMX95"
-elif [ "$MACHINE" == "imx95-verdin-a0" ]; then
-    SOC_TARGET="iMX95"
 elif [ "$MACHINE" == "smarc-imx95" ]; then
     SOC_TARGET="iMX95"
 elif [ "$MACHINE" == "imx8mp-verdin" ]; then
@@ -31,17 +29,6 @@ if [ "$SOC_TARGET" == "iMX95" ]; then
             QSPI_HEADER=./scripts/fspi_header_133 \
             dtbs=${UBOOT_DTB_NAME} \
             flash_all
-
-    elif [ "$MACHINE" == "imx95-verdin-a0" ]; then
-        make clean
-        make \
-            SOC=$SOC_TARGET \
-            OEI=YES \
-            LPDDR_TYPE=lpddr4x \
-            LPDDR_FW_VERSION="_v202409" \
-            REV=A0 \
-            dtbs=${UBOOT_DTB_NAME} \
-            flash_a55
 
     elif [ "$MACHINE" == "smarc-imx95" ]; then
         make \
