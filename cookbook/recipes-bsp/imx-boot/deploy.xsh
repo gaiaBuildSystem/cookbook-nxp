@@ -22,6 +22,7 @@ print("Deploying imx-boot artifacts ...", color=Color.WHITE, bg_color=BgColor.GR
 _ARCH = os.environ.get('ARCH')
 _MACHINE = os.environ.get('MACHINE')
 _MAX_IMG_SIZE = os.environ.get('MAX_IMG_SIZE')
+_DISTRO_NAME = os.environ.get('DISTRO_NAME')
 _BUILD_PATH = os.environ.get('BUILD_PATH')
 _DISTRO_MAJOR = os.environ.get('DISTRO_MAJOR')
 _DISTRO_MINOR = os.environ.get('DISTRO_MINOR')
@@ -50,6 +51,7 @@ if os.environ["MACHINE"] == "imx95-verdin-evk":
     # replace all the {{VAR}} with the actual values
     f = open(f"{_path}/imx95-verdin-evk/uuu.mmc.template", "r")
     uuu_mmc = f.read()
+    uuu_mmc = uuu_mmc.replace("{{name}}", _DISTRO_NAME)
     uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
     uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
     uuu_mmc = uuu_mmc.replace("{{v2}}", _DISTRO_MINOR)
@@ -70,6 +72,7 @@ elif os.environ["MACHINE"] == "smarc-imx95":
     # replace all the {{VAR}} with the actual values
     f = open(f"{_path}/smarc-imx95/uuu.mmc.template", "r")
     uuu_mmc = f.read()
+    uuu_mmc = uuu_mmc.replace("{{name}}", _DISTRO_NAME)
     uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
     uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
     uuu_mmc = uuu_mmc.replace("{{v2}}", _DISTRO_MINOR)
@@ -90,6 +93,7 @@ elif os.environ["MACHINE"] == "imx8mp-verdin":
     # replace all the {{VAR}} with the actual values
     f = open(f"{_path}/imx8mp-verdin/uuu.mmc.template", "r")
     uuu_mmc = f.read()
+    uuu_mmc = uuu_mmc.replace("{{name}}", _DISTRO_NAME)
     uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
     uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
     uuu_mmc = uuu_mmc.replace("{{v2}}", _DISTRO_MINOR)
@@ -110,6 +114,7 @@ elif os.environ["MACHINE"] == "imx93-frdm":
     # replace all the {{VAR}} with the actual values
     f = open(f"{_path}/imx93-frdm/uuu.mmc.template", "r")
     uuu_mmc = f.read()
+    uuu_mmc = uuu_mmc.replace("{{name}}", _DISTRO_NAME)
     uuu_mmc = uuu_mmc.replace("{{variant}}", _DISTRO_VARIANT)
     uuu_mmc = uuu_mmc.replace("{{v1}}", _DISTRO_MAJOR)
     uuu_mmc = uuu_mmc.replace("{{v2}}", _DISTRO_MINOR)
