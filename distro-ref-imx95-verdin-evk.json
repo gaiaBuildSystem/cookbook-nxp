@@ -23,5 +23,6 @@
         "initramfs-php",
         "neofetch",
         "resize-helper"
-    ]
+    ],
+    "$schema": "./schema/distro.json"
 }

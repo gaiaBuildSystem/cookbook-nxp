@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Torizon WSL Distro Manifest Schema",
+    "allOf": [
+        {
+            "$ref": "../../gaia/schema/distro.json"
+        }
+    ],
+    "properties": {
+        "machine": {
+            "description": "The machine type",
+            "type": "string",
+            "enum": [
+                "imx8mp-verdin",
+                "imx93-frdm",
+                "imx95-verdin-evk",
+                "smarc-imx95"
+            ]
+        }
+    }
+}
