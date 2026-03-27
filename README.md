@@ -2,7 +2,7 @@
 
 <p align="center">
     <img
-        src=".assets/cover.png"
+        src=".assets/cover2.png"
         alt="Gaia NXP"
         width="400" />
 </p>
