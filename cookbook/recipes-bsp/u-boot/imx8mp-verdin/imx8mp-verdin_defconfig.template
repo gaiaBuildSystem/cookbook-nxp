@@ -488,7 +488,7 @@ CONFIG_ARCH_FIXUP_FDT_MEMORY=y
 CONFIG_USE_BOOTCOMMAND=y
 CONFIG_BOOTCOMMAND="run bootcmd_mmc2"
 CONFIG_USE_PREBOOT=y
-CONFIG_PREBOOT="test -n ${fdtfile} || setenv fdtfile imx8mp-verdin-${variant}-${fdt_board}.dtb"
+# CONFIG_PREBOOT="test -n ${fdtfile} || setenv fdtfile imx8mp-verdin-${variant}-${fdt_board}.dtb"
 CONFIG_PREBOOT_DEFINED=y
 CONFIG_DEFAULT_FDT_FILE=""
 # CONFIG_SAVE_PREV_BL_FDT_ADDR is not set
