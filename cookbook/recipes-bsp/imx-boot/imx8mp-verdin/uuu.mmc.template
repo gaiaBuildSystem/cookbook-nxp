@@ -9,6 +9,8 @@ SDPS: boot -f flash-ram.bin
 
 CFG: FB: -vid 0x1b67 -pid 0x403a
 
+FB: ucmd env default -a
+FB: ucmd saveenv
 FB: ucmd setenv fastboot_dev mmc
 FB: ucmd setenv emmc_dev 2
 FB: ucmd setenv fastboot_partition_alias_all 2.0:0
