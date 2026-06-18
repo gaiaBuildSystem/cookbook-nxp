@@ -19,6 +19,19 @@
                     "pinPriority": 900
                 }
             ]
+        },
+        "imx8mp-verdin": {
+            "feeds": [
+                {
+                    "name": "toradex",
+                    "feedUri": "https://feeds.toradex.com/stable/imx8/snapshots/20260612T202246Z",
+                    "suites": "stable",
+                    "components": "main non-free",
+                    "gpgKeyUrl": "https://feeds.toradex.com/stable/imx8/toradex-debian-repo-07102024.asc",
+                    "pin": "origin feeds.toradex.com",
+                    "pinPriority": 900
+                }
+            ]
         }
     },
     "merge": true
