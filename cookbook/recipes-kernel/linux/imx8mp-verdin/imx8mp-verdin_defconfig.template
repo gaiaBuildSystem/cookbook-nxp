@@ -7882,7 +7882,7 @@ CONFIG_INTERCONNECT_IMX8MP=m
 #
 # MXC Vivante GPU support
 #
-# CONFIG_MXC_GPU_VIV is not set
+CONFIG_MXC_GPU_VIV=y
 # end of MXC Vivante GPU support
 
 #
