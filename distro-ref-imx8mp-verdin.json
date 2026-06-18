@@ -20,8 +20,7 @@
         "powershell",
         "docker",
         "initramfs-php",
-        "neofetch",
-        "resize-helper"
+        "neofetch"
     ],
     "$schema": "./schema/distro.json"
 }
